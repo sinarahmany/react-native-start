@@ -4,7 +4,7 @@ const TextScreen = () => {
     const [name, setName] = useState("");
     return (
         <View>
-             
+             <Text>Enter your password</Text>
             <TextInput
                 style={styles.input}
                 autoCapitalize="none"
@@ -13,6 +13,7 @@ const TextScreen = () => {
                 onChangeText={(newValue) => setName(newValue)}
             />
            <Text>My Name is: {name}</Text>
+           {name.length < 5 ? <Text>password needs ro be longer than 5</Text> : <Text>looks good</Text>}
         </View>
     );
 };
